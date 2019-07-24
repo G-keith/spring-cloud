@@ -1,6 +1,6 @@
-package com.keith.hystrix.controller;
+package com.keith.dashboard.controller;
 
-import com.keith.hystrix.service.HelloWorldService;
+import com.keith.dashboard.service.HelloWorldService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,8 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
 
-    @Autowired
-    private HelloWorldService helloWorldService;
+    private final HelloWorldService helloWorldService;
+
+    public HelloController(HelloWorldService helloWorldService) {
+        this.helloWorldService = helloWorldService;
+    }
 
     @GetMapping(value = "/hello")
     public String hello(@RequestParam String name) {

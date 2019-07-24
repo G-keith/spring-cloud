@@ -1,0 +1,14 @@
+server:
+  port: 9004
+spring:
+  application:
+    name: cloud-hystrix-dashboard
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9001/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
