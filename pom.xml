@@ -64,4 +64,9 @@
             </plugin>
         </plugins>
     </build>
+
+    <modules>
+        <module>cloud-eureka</module>
+        <module>cloud-producer</module>
+    </modules>
 </project>
